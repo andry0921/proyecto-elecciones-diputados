@@ -28,11 +28,11 @@ int main() {
             cout << " 1. Registrar Partido" << endl;
             cout << " 2. Registrar candidato" << endl;
             cout << " 3. Mostrar candidatos" << endl;
-            cout << " 4. Buscar candidato" << endl;
-            cout << " 5. Modificar candidato" << endl;
-            cout << " 6. Eliminar candidato" << endl;
-            cout << " 7. Resumen Inscripcion" << endl;
-            cout << " 8. Mostrar Partidos Registrados" << endl;
+            cout << " 4. Mostrar Partidos" << endl;
+            cout << " 5. Buscar candidato" << endl;
+            cout << " 6. Modificar candidato" << endl;
+            cout << " 7. Eliminar candidato" << endl;
+            cout << " 8. Resumen Inscripcion" << endl;
             cout << " 9. Salir\n" << endl;
             cout << " Elige una opcion: \n";
             cin >> opcion;
@@ -87,9 +87,13 @@ int main() {
                     break;
                 }
                 case 3:
-                    inscripcion.MostrarPartidos();
+                    inscripcion.MostrarCandidatos();
                     break;
-                case 4: {
+                case 4:{
+                    inscripcion.MostrarPartidos();
+					break;
+				}   
+                case 5: {
 
                     string cedulaCandidato;
                     cout << "Ingrese la cedula del candidato" << endl;
@@ -108,24 +112,20 @@ int main() {
                     break;
 
                 }
-                case 5: {
+                case 6: {
                 	string cedulaModificar;
                 	cout<<"Ingrese la cedula del candidato a modificar: "; cin>>cedulaModificar;
                 	inscripcion.ModificarCandidato(cedulaModificar);
 					break;
                 }
 
-                case 6:
+                case 7:
                     cout << "Ingrese la cedula del candidato a eliminar: ";
                     cin >> cedEliminar;
                     cin.ignore(); // Limpiar el buffer de entrada
                     inscripcion.EliminarCandidato(cedEliminar);
                     break;
 
-                case 7:{
-                    inscripcion.ReporteGeneral();
-					break;
-				}   
                 case 8:{
                     inscripcion.mostrarReporteCompleto();
 					break;

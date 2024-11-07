@@ -1,0 +1,5 @@
+﻿*.o
+Makefile.win
+test.dev
+test.exe
+test.layout
